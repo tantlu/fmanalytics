@@ -119,9 +119,9 @@ let stats = [];
 
     function getCountryCode(nation) {
       const map = {
-        "France": "fr", "England": "gb", "Portugal": "pt", "Ecuador": "ec",
-        "Senegal": "sn", "Argentina": "ar", "Spain": "es", "Germany": "de",
-        "Brazil": "br", "VIE": "vn"
+        "FRA": "fr", "ENG": "gb", "POR": "pt", "Ecuador": "ec",
+        "Senegal": "sn", "ARG": "ar", "ESP": "es", "GER": "de",
+        "BRA": "br", "VIE": "vn", "JPN": "jp", "RUS": "ru"
       };
       return map[nation] || "un";
     }
