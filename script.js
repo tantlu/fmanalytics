@@ -119,12 +119,7 @@ let stats = [];
 
     function getCountryCode(nation) {
       const map = {
-        Để giúp bạn dễ đọc hơn, tôi đã dàn trải đoạn mã ra một cách gọn gàng, tránh việc xuống dòng quá nhiều:
-
-Python
-
-country_codes = {
-    "FRA": "fr", "ENG": "gb", "POR": "pt", "Ecuador": "ec", "Senegal": "sn",
+        "FRA": "fr", "ENG": "gb", "POR": "pt", "Ecuador": "ec", "Senegal": "sn",
     "ARG": "ar", "ESP": "es", "GER": "de", "BRA": "br", "VIE": "vn",
     "JPN": "jp", "RUS": "ru", "USA": "us", "CAN": "ca", "MEX": "mx",
     "AUS": "au", "IND": "in", "CHN": "cn", "ITA": "it", "NED": "nl",
