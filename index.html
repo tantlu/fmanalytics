@@ -10,43 +10,43 @@
 </head>
 <body>
     <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-9">
-                <h2 class="text-center">Football Statistics</h2>
-                <input type="file" id="fileInput" class="form-control mb-3" accept=".html">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th onclick="sortTable('number')">No.</th>
-                            <th onclick="sortTable('name')">Tên</th>
-                            <th onclick="sortTable('position')">Vị trí</th>
-                            <th onclick="sortTable('nation')">Nation</th>
-                            <th onclick="sortTable('age')">Tuổi</th>
-                            <th onclick="sortTable('value')">Transfer Value</th>
-                            <th onclick="sortTable('goals')">Mục tiêu</th>
-                            <th onclick="sortTable('cards_Y')">Thẻ Vàng</th>
-                            <th onclick="sortTable('cards_R')">Thẻ Đỏ</th>
-                            <th onclick="sortTable('rating')">Av Rat</th>
-                            <th onclick="sortTable('minutes')">Minutes Played</th>
-                            <th onclick="sortTable('homeGrown')">Home Grown Status</th>
-                            <th onclick="sortTable('matches')">Matches Played</th>
-                        </tr>
-                    </thead>
-                    <tbody id="playerTable"></tbody>
-                </table>
-            </div>
-            <div class="col-md-3">
-                <div class="sidebar">
-                    <h5>Top Scorers</h5>
-                    <ul id="topScorers" class="list-group mb-3"></ul>
-                    <h5>Top Assists</h5>
-                    <ul id="topAssists" class="list-group mb-3"></ul>
-                    <h5>Top Played Minutes</h5>
-                    <ul id="topMinutes" class="list-group"></ul>
-                </div>
-            </div>
+    <div class="row">
+      <div class="col-md-9">
+        <h2 class="text-center mb-4">Football Statistics</h2>
+        <input type="file" id="fileInput" class="form-control mb-3" accept=".html" />
+        <table class="table table-hover align-middle text-start">
+          <thead>
+            <tr>
+              <th onclick="sortTable('number')">No.</th>
+              <th onclick="sortTable('name')">Tên</th>
+              <th onclick="sortTable('position')">Vị trí</th>
+              <th onclick="sortTable('nation')">Nation</th>
+              <th onclick="sortTable('age')">Tuổi</th>
+              <th onclick="sortTable('value')">Transfer Value</th>
+              <th onclick="sortTable('goals')">Goals / Assists</th>
+              <th onclick="sortTable('cards_Y')">Thẻ V</th>
+              <th onclick="sortTable('cards_R')">Thẻ Đ</th>
+              <th onclick="sortTable('rating')">Av. Rat</th>
+              <th onclick="sortTable('minutes')">Minutes</th>
+              <th onclick="sortTable('homeGrown')">HG Status</th>
+              <th onclick="sortTable('matches')">Matches</th>
+            </tr>
+          </thead>
+          <tbody id="playerTable"></tbody>
+        </table>
+      </div>
+      <div class="col-md-3">
+        <div class="sidebar">
+          <h5>Top Scorers</h5>
+          <ul id="topScorers" class="list-group mb-3"></ul>
+          <h5>Top Assists</h5>
+          <ul id="topAssists" class="list-group mb-3"></ul>
+          <h5>Top Played Minutes</h5>
+          <ul id="topMinutes" class="list-group"></ul>
         </div>
+      </div>
     </div>
+  </div>
 
     <script src="script.js"></script>
 </body>
