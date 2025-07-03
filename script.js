@@ -57,7 +57,7 @@ let stats = [];
           <td>${player.position}</td>
           <td>${player.nation}</td>
           <td>${player.age}</td>
-          <td><span class="rating-box">€${player.value.toFixed(1)}M</span></td>
+          <td><span class="rating-box">€${player.value.toFixed(1)}</span></td>
           <td>${player.goals} / ${player.assists}</td>
           <td>${player.cards_Y}</td>
           <td>${player.cards_R}</td>
