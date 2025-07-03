@@ -121,7 +121,7 @@ let stats = [];
       const map = {
         "France": "fr", "England": "gb", "Portugal": "pt", "Ecuador": "ec",
         "Senegal": "sn", "Argentina": "ar", "Spain": "es", "Germany": "de",
-        "Brazil": "br", "Vietnam": "vn"
+        "Brazil": "br", "VIE": "vn"
       };
       return map[nation] || "un";
     }
