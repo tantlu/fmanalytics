@@ -119,7 +119,7 @@ let stats = [];
 
     function getCountryCode(nation) {
       const map = {
-        "FRA": "fr", "ENG": "gb", "POR": "pt", "Ecuador": "ec", "Senegal": "sn",
+        "FRA": "fr", "ENG": "en", "POR": "pt", "Ecuador": "ec", "Senegal": "sn",
     "ARG": "ar", "ESP": "es", "GER": "de", "BRA": "br", "VIE": "vn",
     "JPN": "jp", "RUS": "ru", "USA": "us", "CAN": "ca", "MEX": "mx",
     "AUS": "au", "IND": "in", "CHN": "cn", "ITA": "it", "NED": "nl",
@@ -159,7 +159,7 @@ let stats = [];
     "GRD": "gd", "HND": "hn", "HTI": "ht", "KNA": "kn", "LCA": "lc",
     "MSR": "ms", "NIC": "ni", "PAN": "pa", "PRI": "pr", "SXM": "sx",
     "TCA": "tc", "TTO": "tt", "VCT": "vc", "VGB": "vg", "VIR": "vi",
-    "ABW": "aw", "BHS": "bs", "BRB": "bb", "CRI": "cr", "ATG": "ag",
+    "ABW": "aw", "BHS": "bs", "BRB": "bb", "CRO": "cr", "ATG": "ag",
     "BLZ": "bz", "GTM": "gt", "SLV": "sv"
       };
       return map[nation] || "un";
