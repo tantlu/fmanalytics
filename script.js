@@ -42,7 +42,7 @@ function parseHTML(html) {
                 technique: parseInt(cells[16]?.innerText) || 0,
                 pace: parseInt(cells[27]?.innerText) || 0,
                 personality: cells[60]?.innerText || '-',           // Cột 60: Personality
-                nation: cells[61]?.innerText || '',
+                nation: cells[62]?.innerText || '',
                 dorsal: parseInt(cells[64]?.innerText) || 0,
                 age: parseInt(cells[66]?.innerText) || 0,
                 value: value,                                        // Lấy từ cột AP (94)
