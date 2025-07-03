@@ -1,5 +1,6 @@
-    let stats = [];
+let stats = [];
     let sortOrder = {};
+    let radarChart;
 
     document.getElementById("fileInput").addEventListener("change", function (event) {
       const file = event.target.files[0];
@@ -44,12 +45,13 @@
       });
       displayStats(stats);
       updateTops(stats);
+      drawRadar(stats[0]);
     }
 
     function displayStats(data) {
       const tableBody = document.getElementById("playerTable");
-      tableBody.innerHTML = data.map(player => `
-        <tr>
+      tableBody.innerHTML = data.map((player, i) => `
+        <tr onclick="drawRadar(stats[${i}])">
           <td>${player.number}</td>
           <td><img class="flag-icon" src="https://flagcdn.com/16x12/${getCountryCode(player.nation)}.png" alt=""> ${player.name}</td>
           <td>${player.position}</td>
@@ -69,10 +71,10 @@
 
     function sortTable(column) {
       if (!sortOrder[column] || sortOrder[column] === 'desc') {
-        stats.sort((a, b) => (a[column] > b[column] ? 1 : -1));
+        stats.sort((a, b) => (a[column] > b[column]) ? 1 : -1);
         sortOrder[column] = 'asc';
       } else {
-        stats.sort((a, b) => (a[column] < b[column] ? 1 : -1));
+        stats.sort((a, b) => (a[column] < b[column]) ? 1 : -1);
         sortOrder[column] = 'desc';
       }
       displayStats(stats);
@@ -88,18 +90,38 @@
       document.getElementById("topMinutes").innerHTML = topMinutes.map(p => `<li class='list-group-item'>${p.name}: ${p.minutes} minutes</li>`).join('');
     }
 
+    function drawRadar(player) {
+      const ctx = document.getElementById('radarChart').getContext('2d');
+      const data = {
+        labels: ['Goals', 'Assists', 'Rating', 'Minutes', 'Cards (Y)', 'Cards (R)'],
+        datasets: [{
+          label: player.name,
+          data: [player.goals, player.assists, player.rating, player.minutes, player.cards_Y, player.cards_R],
+          backgroundColor: 'rgba(54, 162, 235, 0.2)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 2
+        }]
+      };
+      if (radarChart) radarChart.destroy();
+      radarChart = new Chart(ctx, {
+        type: 'radar',
+        data: data,
+        options: {
+          scales: {
+            r: {
+              suggestedMin: 0,
+              suggestedMax: Math.max(20, player.minutes)
+            }
+          }
+        }
+      });
+    }
+
     function getCountryCode(nation) {
       const map = {
-        "France": "fr",
-        "England": "gb",
-        "Portugal": "pt",
-        "Ecuador": "ec",
-        "Senegal": "sn",
-        "Argentina": "ar",
-        "Spain": "es",
-        "Germany": "de",
-        "Brazil": "br",
-        "Vietnam": "vn",
+        "France": "fr", "England": "gb", "Portugal": "pt", "Ecuador": "ec",
+        "Senegal": "sn", "Argentina": "ar", "Spain": "es", "Germany": "de",
+        "Brazil": "br", "Vietnam": "vn"
       };
       return map[nation] || "un";
     }
