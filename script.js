@@ -119,9 +119,53 @@ let stats = [];
 
     function getCountryCode(nation) {
       const map = {
-        "FRA": "fr", "ENG": "gb", "POR": "pt", "Ecuador": "ec",
-        "Senegal": "sn", "ARG": "ar", "ESP": "es", "GER": "de",
-        "BRA": "br", "VIE": "vn", "JPN": "jp", "RUS": "ru"
+        Để giúp bạn dễ đọc hơn, tôi đã dàn trải đoạn mã ra một cách gọn gàng, tránh việc xuống dòng quá nhiều:
+
+Python
+
+country_codes = {
+    "FRA": "fr", "ENG": "gb", "POR": "pt", "Ecuador": "ec", "Senegal": "sn",
+    "ARG": "ar", "ESP": "es", "GER": "de", "BRA": "br", "VIE": "vn",
+    "JPN": "jp", "RUS": "ru", "USA": "us", "CAN": "ca", "MEX": "mx",
+    "AUS": "au", "IND": "in", "CHN": "cn", "ITA": "it", "NED": "nl",
+    "BEL": "be", "SWE": "se", "NOR": "no", "DEN": "dk", "FIN": "fi",
+    "SUI": "ch", "AUT": "at", "POL": "pl", "GRE": "gr", "TUR": "tr",
+    "EGY": "eg", "RSA": "za", "NGA": "ng", "KEN": "ke", "COL": "co",
+    "CHI": "cl", "PER": "pe", "URU": "uy", "PAR": "py", "BOL": "bo",
+    "VEN": "ve", "CUB": "cu", "JAM": "jm", "NZL": "nz", "PHI": "ph",
+    "MYS": "my", "SGP": "sg", "THA": "th", "IDN": "id", "KOR": "kr",
+    "PRK": "kp", "ISR": "il", "SAU": "sa", "UAE": "ae", "IRN": "ir",
+    "IRQ": "iq", "PAK": "pk", "AFG": "af", "BGD": "bd", "NPL": "np",
+    "LKA": "lk", "SYR": "sy", "LIB": "lb", "JOR": "jo", "TUN": "tn",
+    "MAR": "ma", "ALG": "dz", "MOR": "ma", "GHA": "gh", "CIV": "ci",
+    "CMR": "cm", "UGA": "ug", "TZA": "tz", "ETH": "et", "SOM": "so",
+    "DRC": "cd", "SUD": "sd", "SSD": "ss", "ANG": "ao", "MOZ": "mz",
+    "ZIM": "zw", "ZAM": "zm", "NAM": "na", "BOT": "bw", "MAD": "mg",
+    "MLI": "ml", "NIG": "ne", "CHA": "td", "CAF": "cf", "COD": "cg",
+    "GAB": "ga", "EQG": "gq", "BFA": "bf", "BEN": "bj", "TOG": "tg",
+    "GMB": "gm", "GNB": "gw", "SLE": "sl", "LBR": "lr", "CPV": "cv",
+    "STP": "st", "COM": "km", "SEY": "sc", "MRI": "mu", "MDV": "mv",
+    "FJI": "fj", "PNG": "pg", "SLB": "sb", "VUT": "vu", "NCL": "nc",
+    "PYF": "pf", "WSM": "ws", "TON": "to", "KIR": "ki", "TUV": "tv",
+    "MHL": "mh", "FSM": "fm", "PLW": "pw", "NRU": "nr", "GRL": "gl",
+    "ISL": "is", "FRO": "fo", "MLT": "mt", "CYP": "cy", "LUX": "lu",
+    "MCO": "mc", "AND": "ad", "SMR": "sm", "VAT": "va", "LIE": "li",
+    "BIH": "ba", "SRB": "rs", "HRV": "hr", "SVN": "si", "MKD": "mk",
+    "MNE": "me", "ALB": "al", "KOS": "xk", "ROU": "ro", "BGR": "bg",
+    "MDA": "md", "UKR": "ua", "BLR": "by", "LTU": "lt", "LVA": "lv",
+    "EST": "ee", "GEO": "ge", "ARM": "am", "AZE": "az", "KAZ": "kz",
+    "KGZ": "kg", "TJK": "tj", "TKM": "tm", "UZB": "uz", "MNG": "mn",
+    "NEP": "np", "BTN": "bt", "LAO": "la", "KHM": "kh", "BRN": "bn",
+    "TLS": "tl", "CCK": "cc", "CXR": "cx", "HMD": "hm", "NFK": "nf",
+    "ATF": "tf", "BVT": "bv", "IOT": "io", "SGS": "gs", "SPM": "pm",
+    "GLP": "gp", "MTQ": "mq", "GUF": "gf", "REU": "re", "MYT": "yt",
+    "BLM": "bl", "MAF": "mf", "FLK": "fk", "AIA": "ai", "BMU": "bm",
+    "BES": "bq", "CYM": "ky", "CUW": "cw", "DMA": "dm", "DOM": "do",
+    "GRD": "gd", "HND": "hn", "HTI": "ht", "KNA": "kn", "LCA": "lc",
+    "MSR": "ms", "NIC": "ni", "PAN": "pa", "PRI": "pr", "SXM": "sx",
+    "TCA": "tc", "TTO": "tt", "VCT": "vc", "VGB": "vg", "VIR": "vi",
+    "ABW": "aw", "BHS": "bs", "BRB": "bb", "CRI": "cr", "ATG": "ag",
+    "BLZ": "bz", "GTM": "gt", "SLV": "sv"
       };
       return map[nation] || "un";
     }
